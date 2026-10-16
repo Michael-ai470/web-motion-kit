@@ -1,0 +1,257 @@
+/* Inline <style> of El-Global contact.html, verbatim (reference for the recipes used there). */
+
+    /* Hero: css/contact.css */
+
+    /* ═══ CONTACT LAYOUT ═══ */
+    .contact-section { padding: 120px 0; }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    /* Form side */
+    .contact-form-wrap .eyebrow { margin-bottom: 20px; }
+
+    .contact-form-wrap h2 {
+      font-size: clamp(28px, 3vw, 40px);
+      font-weight: 300;
+      margin-bottom: 12px;
+      line-height: 1.15;
+    }
+
+    .contact-form-wrap > p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+
+    .contact-form { display: flex; flex-direction: column; gap: 0; }
+
+    .contact-form .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .contact-form .form-group { margin-bottom: 20px; }
+
+    .contact-form .btn {
+      margin-top: 8px;
+      width: 100%;
+    }
+
+    /* Info side */
+    .contact-info { padding-top: 8px; }
+
+    .contact-info-block {
+      margin-bottom: 48px;
+    }
+
+    .contact-info-block:last-child { margin-bottom: 0; }
+
+    .contact-info-heading {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 20px;
+    }
+
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .contact-info-item:last-child { margin-bottom: 0; }
+
+    .contact-info-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border-mid);
+      flex-shrink: 0;
+      font-size: 16px;
+      transition: all var(--transition);
+    }
+
+    .contact-info-item:hover .contact-info-icon {
+      border-color: var(--gold);
+      box-shadow: 0 0 16px rgba(201,168,76,0.08);
+    }
+
+    .contact-info-label {
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 4px;
+    }
+
+    .contact-info-value {
+      font-size: 15px;
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    .contact-info-value a {
+      color: var(--text-primary);
+      transition: color var(--transition);
+    }
+
+    .contact-info-value a:hover { color: var(--gold); }
+
+    @media (max-width: 1024px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 64px; }
+      .contact-section { padding: 88px 0; }
+    }
+
+    @media (max-width: 768px) {
+      .contact-section { padding: 64px 0; }
+      .contact-form .form-row { grid-template-columns: 1fr; }
+    }
+
+    /* ═══ OFFICES ═══ */
+    .offices-section {
+      padding: 100px 0;
+      border-top: 1px solid var(--border);
+      background: var(--charcoal);
+    }
+
+    .offices-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .offices-header .eyebrow {
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .offices-header .eyebrow::after {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: var(--gradient-signature);
+    }
+
+    .offices-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .office-card-full {
+      position: relative;
+      overflow: hidden;
+      min-height: 380px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      border: 1px solid var(--border);
+      transition: all 0.4s var(--ease);
+    }
+
+    .office-card-full:hover { border-color: var(--border-mid); }
+
+    .office-card-full-bg {
+      position: absolute;
+      inset: 0;
+    }
+
+    .office-card-full-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.3) saturate(0.75);
+      transition: all 0.6s var(--ease);
+    }
+
+    .office-card-full:hover .office-card-full-bg img {
+      filter: brightness(0.4) saturate(0.85);
+      transform: scale(1.04);
+    }
+
+    .office-card-full-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.85) 100%);
+    }
+
+    .office-card-full::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--gradient-signature);
+      z-index: 3;
+      transform: scaleX(0);
+      transition: transform 0.5s var(--ease);
+    }
+
+    .office-card-full:hover::before { transform: scaleX(1); }
+
+    .office-card-full-content {
+      position: relative;
+      z-index: 2;
+      padding: 36px;
+    }
+
+    .office-card-full-flag {
+      font-size: 24px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .office-card-full h4 {
+      font-size: 28px;
+      font-weight: 300;
+      margin-bottom: 4px;
+    }
+
+    .office-card-full-country {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      background: var(--gradient-signature);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .office-card-full-dash {
+      width: 28px;
+      height: 2px;
+      background: var(--gradient-signature);
+      margin-bottom: 14px;
+      transition: width 0.4s var(--ease);
+    }
+
+    .office-card-full:hover .office-card-full-dash { width: 48px; }
+
+    .office-card-full-address {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 1024px) {
+      .offices-grid { grid-template-columns: 1fr; }
+      .office-card-full { min-height: 320px; }
+    }
+
+    @media (max-width: 768px) {
+      .offices-section { padding: 64px 0; }
+      .office-card-full { min-height: 280px; }
+      .office-card-full-content { padding: 28px; }
+    }
+  

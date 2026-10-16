@@ -1,0 +1,36 @@
+/* Inline <style> of El-Global hl/index.html, verbatim (reference for the recipes used there). */
+
+    /* ═══ CTA ═══ */
+    .hl-cta {
+      padding: 100px 0; text-align: center; position: relative;
+    }
+
+    .hl-cta::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 50% 60% at 50% 50%, rgba(201,168,76,0.03) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hl-cta .eyebrow {
+      justify-content: center; margin-bottom: 20px;
+    }
+
+    .hl-cta .eyebrow::after {
+      content: ''; width: 40px; height: 1px;
+      background: var(--gradient-signature);
+    }
+
+    .hl-cta h2 {
+      font-size: clamp(30px, 4vw, 48px);
+      font-weight: 300; margin-bottom: 16px;
+    }
+
+    .hl-cta p {
+      font-size: 15px; color: var(--text-muted);
+      max-width: 480px; margin: 0 auto 40px; line-height: 1.8;
+    }
+
+    .hl-cta .btn-row { justify-content: center; }
+
+    @media (max-width: 768px) { .hl-cta { padding: 64px 0; } }
+  

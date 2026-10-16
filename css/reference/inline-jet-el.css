@@ -1,0 +1,150 @@
+/* Inline <style> of El-Global jet-el/index.html, verbatim (reference for the recipes used there). */
+
+    /* ═══ PAGE HERO — full screen, the video behind the navbar ═══
+       The copy sits on the lower part of the frame: eyebrow and heading across the
+       width, then the subheading and the service pills on one row beneath.
+       js/recipes/hero-intro.js plays it in on load and lifts it away on scroll. */
+    .jetel-hero {
+      position: relative;
+      height: 100svh;
+      min-height: 560px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+
+    .jetel-hero-bg {
+      position: absolute;
+      inset: 0;
+    }
+
+    .jetel-hero-bg img,
+    .jetel-hero-bg video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      filter: brightness(0.22) saturate(0.7);
+    }
+
+    .jetel-hero-bg video {
+      position: absolute;
+      inset: 0;
+    }
+
+    /* Hide fallback image when video is playing */
+    .jetel-hero-bg video.is-playing + img {
+      display: none;
+    }
+
+    .jetel-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.1) 35%, rgba(0,0,0,0.45) 70%, rgba(0,0,0,0.92) 100%);
+    }
+
+    .jetel-hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding-top: calc(var(--nav-height) + 40px);
+      padding-bottom: clamp(48px, 11svh, 120px);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, auto);
+      column-gap: clamp(32px, 6vw, 96px);
+      align-items: end;
+    }
+
+    .jetel-hero .eyebrow { grid-column: 1 / -1; margin-bottom: 24px; }
+
+    .jetel-hero h1 {
+      grid-column: 1 / -1;
+      margin: 0 0 clamp(28px, 5svh, 52px);
+    }
+
+    .jetel-hero-desc {
+      color: var(--text-secondary);
+      max-width: 46ch;
+      margin: 0;
+    }
+
+    .jetel-hero-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      max-width: 440px;
+    }
+
+    .jetel-hero-pill {
+      color: var(--text-muted);
+      border: 1px solid var(--border-mid);
+      padding: 7px 18px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: color var(--transition), border-color var(--transition), background var(--transition);
+    }
+
+    .jetel-hero-pill:hover {
+      color: var(--white);
+      border-color: var(--gold);
+      background: rgba(201,168,76,0.05);
+    }
+
+    @media (max-width: 900px) {
+      .jetel-hero-content { grid-template-columns: minmax(0, 1fr); row-gap: 28px; }
+      .jetel-hero-pills { justify-content: flex-start; max-width: none; }
+    }
+
+    @media (max-width: 768px) {
+      .jetel-hero-content { padding-top: calc(var(--nav-height) + 20px); padding-bottom: 40px; }
+      .jetel-hero-pill { padding: 6px 14px; }
+    }
+
+    /* ═══ CTA ═══ */
+    .jetel-cta {
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+    }
+
+    .jetel-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 50% 60% at 50% 50%, rgba(201,168,76,0.03) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .jetel-cta .eyebrow {
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .jetel-cta .eyebrow::after {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: var(--gradient-signature);
+    }
+
+    .jetel-cta h2 {
+      font-size: clamp(30px, 4vw, 48px);
+      font-weight: 300;
+      margin-bottom: 16px;
+    }
+
+    .jetel-cta p {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin: 0 auto 40px;
+      line-height: 1.8;
+    }
+
+    .jetel-cta .btn-row { justify-content: center; }
+
+    @media (max-width: 768px) {
+      .jetel-cta { padding: 64px 0; }
+    }
+  

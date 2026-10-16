@@ -1,0 +1,31 @@
+/* Inline <style> of El-Global one-percent/index.html, verbatim (reference for the recipes used there). */
+
+    /* ═══ CTA ═══ */
+    .op-cta {
+      padding: 100px 0; text-align: center; position: relative;
+    }
+
+    .op-cta::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 50% 60% at 50% 50%, rgba(201,168,76,0.03) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .op-cta .eyebrow { justify-content: center; margin-bottom: 20px; }
+
+    .op-cta .eyebrow::after {
+      content: ''; width: 40px; height: 1px;
+      background: var(--gradient-signature);
+    }
+
+    .op-cta h2 { font-size: clamp(30px, 4vw, 48px); font-weight: 300; margin-bottom: 16px; }
+
+    .op-cta p {
+      font-size: 15px; color: var(--text-muted);
+      max-width: 480px; margin: 0 auto 40px; line-height: 1.8;
+    }
+
+    .op-cta .btn-row { justify-content: center; }
+
+    @media (max-width: 768px) { .op-cta { padding: 64px 0; } }
+  
